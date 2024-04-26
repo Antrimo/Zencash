@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class Page1 extends StatefulWidget {
-  const Page1({super.key});
+class Page2 extends StatefulWidget {
+  const Page2({super.key});
 
   @override
-  State<Page1> createState() => _Page1State();
+  State<Page2> createState() => _Page2State();
 }
 
-class _Page1State extends State<Page1> {
+class _Page2State extends State<Page2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class _Page1State extends State<Page1> {
               children: [
                 Container(
                   child: Image.asset(
-                    "assets/home.png",
+                    "assets/hom1.png",
                     height: 339,
                     width: 339,
                   ),
@@ -39,7 +39,7 @@ class _Page1State extends State<Page1> {
                   child: Column(
                     children: [
                       Text(
-                        "Become Proactive",
+                        "Unlock potential,",
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: "Poppins",
@@ -47,7 +47,7 @@ class _Page1State extends State<Page1> {
                         ),
                       ),
                       Text(
-                        "money managers with us!!",
+                        "one budget at a time",
                         style: TextStyle(
                           fontSize: 20,
                           fontFamily: "Poppins",

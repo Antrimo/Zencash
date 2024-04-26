@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zencash/onbard/dot.dart';
 import 'package:zencash/onbard/page_one.dart';
+import 'package:zencash/onbard/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Page1(),
+      home: Splash(),
     );
   }
 }
