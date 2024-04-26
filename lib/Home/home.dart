@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(20),
             child: Container(
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [Colors.white, Color.fromRGBO(199, 198, 255, 0.612)])
@@ -98,19 +98,19 @@ class _HomeState extends State<Home> {
 Widget whitebutton(String label)
 {
   return Container(height: 40, width: 168,
-    decoration: BoxDecoration(border: Border.all(color: Color.fromRGBO(85, 81, 255, 1), width: 1),
+    decoration: BoxDecoration(border: Border.all(color: const Color.fromRGBO(85, 81, 255, 1), width: 1),
 
       borderRadius: BorderRadius.circular(5),
     ),
     child: ElevatedButton(onPressed: (){}, 
     style: ElevatedButton.styleFrom(
-        backgroundColor: Color.fromARGB(255, 219, 219, 252),
+        backgroundColor: const Color.fromARGB(255, 219, 219, 252),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
       ),
       child: Text(label, 
-        textScaler: TextScaler.linear(0.70), 
+        textScaler: const TextScaler.linear(0.70), 
         maxLines: 1,
-        style: TextStyle(color: Colors.black, 
+        style: const TextStyle(color: Colors.black, 
           fontWeight: FontWeight.w300,
           fontSize: 20,
 
