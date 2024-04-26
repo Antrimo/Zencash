@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:zencash/home.dart';
 import 'package:zencash/landing.dart';
 import 'package:zencash/onbard/page_one.dart';
+import 'package:zencash/onbard/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +26,5 @@ class _MyAppState extends State<MyApp> {
       ),
       debugShowCheckedModeBanner: false,
       home: const LandingPage(),
+      home: Splash(),
     );
-  }
-}
