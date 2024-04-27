@@ -1,17 +1,19 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:zencash/auth/register.dart';
+import 'package:flutter/widgets.dart';
+import 'package:zencash/auth/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterPageState extends State<RegisterPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _obscureText1 = true;
-  final bool _obscureText2 = true;
+  bool _obscureText2 = true;
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
@@ -34,7 +36,7 @@ class _LoginState extends State<Login> {
                 margin: const EdgeInsets.only(top: 50.0),
                 child: const Center(
                   child: Text(
-                    'Login',
+                    'Registration',
                     style: TextStyle(
                       fontSize: 26.0,
                       fontWeight: FontWeight.w500,
@@ -44,6 +46,27 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(height: 37.0),
+              SizedBox(
+                width: 310, // Custom width
+                height: 50, // Custom height
+                child: TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Name',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 20.0),
 
               // Email TextField
               SizedBox(
@@ -64,6 +87,28 @@ class _LoginState extends State<Login> {
                     } else {
                       return 'Please enter a valid email';
                     }
+                  },
+                ),
+              ),
+              const SizedBox(height: 20.0),
+
+              SizedBox(
+                width: 310, // Custom width
+                height: 50, // Custom height
+                child: TextFormField(
+                  controller: _contactController,
+                  keyboardType: TextInputType.phone,
+                  decoration: const InputDecoration(
+                    labelText: 'Contact',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter your contact number';
+                    }
+                    return null;
                   },
                 ),
               ),
@@ -101,7 +146,41 @@ class _LoginState extends State<Login> {
               ),
               const SizedBox(height: 20.0),
 
-              const Text("Forgot Password?"),
+              SizedBox(
+                width: 310, // Custom width
+                height: 50, // Custom height
+                child: TextFormField(
+                  controller: _confirmPasswordController,
+                  obscureText: _obscureText2,
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                    border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    suffixIcon: IconButton(
+                      icon: Icon(_obscureText2
+                          ? Icons.visibility_off
+                          : Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          _obscureText2 = !_obscureText2;
+                        });
+                      },
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please confirm your password';
+                    } else if (value != _passwordController.text) {
+                      return 'Passwords do not match';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              const SizedBox(height: 20.0),
+
+              const Text("I agree to Terms of Service and Privacy Policy"),
               const SizedBox(
                 height: 20,
               ),
@@ -129,7 +208,7 @@ class _LoginState extends State<Login> {
                   ),
                   child: const Center(
                     child: Text(
-                      "Login",
+                      "Register",
                       style: TextStyle(color: Colors.white, fontSize: 24),
                     ),
                   ),
@@ -140,8 +219,8 @@ class _LoginState extends State<Login> {
 
               const Text("____________________ OR ____________________"),
 
-              const SizedBox(height: 40.0),
-              const Text("Login with"),
+              const SizedBox(height: 20.0),
+              const Text("Register with"),
               const SizedBox(height: 9.0),
 
               Row(
@@ -172,25 +251,19 @@ class _LoginState extends State<Login> {
                   ),
                 ],
               ),
-              const SizedBox(height: 30.0),
-              const Text("Touch ID Authentication"),
-              const SizedBox(height: 20.0),
-              const Icon(Icons.fingerprint, size: 80, color: Colors.black),
-              const SizedBox(
-                height: 40,
-              ),
+              const SizedBox(height: 5.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Don't have an account?"),
+                  const Text("Already have an account?"),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const RegisterPage()));
+                              builder: (context) => const Login()));
                     },
-                    child: const Text("Register"),
+                    child: const Text("Login"),
                   ),
                 ],
               )
