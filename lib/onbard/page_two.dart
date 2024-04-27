@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zencash/auth/register.dart';
+import 'package:zencash/onbard/page_three.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -60,31 +62,58 @@ class _Page2State extends State<Page2> {
                 const SizedBox(
                   height: 150,
                 ),
-                Container(
-                  width: 300,
-                  height: 60,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(85, 81, 255, 1),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Page3(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 300,
+                    height: 60,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromRGBO(52, 51, 56, 0.494),
+                          blurRadius: 10,
+                          offset: Offset(0, 7),
+                        ),
+                      ],
+                      color: Color.fromRGBO(85, 81, 255, 1),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
                     ),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Next",
-                      style: TextStyle(color: Colors.white, fontSize: 24),
+                    child: const Center(
+                      child: Text(
+                        "Next",
+                        style: TextStyle(color: Colors.white, fontSize: 24),
+                      ),
                     ),
                   ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
-                  "Skip",
-                  style: TextStyle(
-                    // color: Color.fromRGBO(4, 63, 111, 1),
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterPage(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    "Skip",
+                    style: TextStyle(
+                      // color: Color.fromRGBO(4, 63, 111, 1),
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
