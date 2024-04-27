@@ -11,9 +11,8 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: GestureDetector(
+    return Scaffold(
+        body: GestureDetector(
           onTap: () {
             Navigator.push(
               context,
