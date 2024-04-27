@@ -11,7 +11,7 @@ List<String> expes = [
   Widget transbox(String thing)
   {
     List tran = thing.split(' ');
-    String moni=tran[1];
+    String moni=tran.length>1?tran[1]:'Nil';
     return Column(crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(thing),
@@ -19,7 +19,7 @@ List<String> expes = [
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const Text('27th April 2024'),
-            Text(tran.length>1?'Rs. $moni':'Nil'),
+            Text('Rs. $moni'),
           ],
         ),
         const SizedBox(height: 10,),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zencash/Home/chat.dart';
 import 'package:zencash/Home/home.dart';
+import 'package:zencash/NavOps/records.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -13,9 +14,9 @@ class _LandingPageState extends State<LandingPage> {
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     Home(),
-    Text('Business'),
-    Text('School'),
-    Text('Settings'),
+    Text('Analytics'),
+    Records(),
+    Text('Community'),
   ];
 
   void _onItemTapped(int index) {

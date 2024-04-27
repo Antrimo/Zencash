@@ -51,10 +51,11 @@ class _ChatState extends State<Chat> {
 ),
         ],
       ),
+      
       bottomNavigationBar: BottomAppBar(child: Row(
         children: <Widget>[
           Expanded(
-                    child: TextField(
+                    child: TextField(scrollPhysics: const AlwaysScrollableScrollPhysics(),
                       controller: _chatter,
                       decoration: const InputDecoration(
                         fillColor: Colors.white,
