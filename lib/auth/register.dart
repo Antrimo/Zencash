@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:zencash/auth/login.dart';
+import 'package:zencash/landing.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -65,13 +66,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   },
                 ),
               ),
-
               const SizedBox(height: 20.0),
-
-              // Email TextField
               SizedBox(
-                width: 310, // Custom width
-                height: 50, // Custom height
+                width: 310,
+                height: 50,
                 child: TextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
@@ -81,17 +79,16 @@ class _RegisterPageState extends State<RegisterPage> {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                   ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter your email';
-                    } else {
-                      return 'Please enter a valid email';
-                    }
-                  },
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return 'Please enter your email';
+                  //   } else {
+                  //     return 'Please enter a valid email';
+                  //   }
+                  // },
                 ),
               ),
               const SizedBox(height: 20.0),
-
               SizedBox(
                 width: 310, // Custom width
                 height: 50, // Custom height
@@ -113,7 +110,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-
               SizedBox(
                 width: 310, // Custom width
                 height: 50, // Custom height
@@ -145,7 +141,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-
               SizedBox(
                 width: 310, // Custom width
                 height: 50, // Custom height
@@ -179,7 +174,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-
               const Text("I agree to Terms of Service and Privacy Policy"),
               const SizedBox(
                 height: 20,
@@ -187,7 +181,12 @@ class _RegisterPageState extends State<RegisterPage> {
               GestureDetector(
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
-                    print('Login successful!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LandingPage(),
+                      ),
+                    );
                   }
                 },
                 child: Container(
@@ -214,15 +213,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
               ),
-
               const SizedBox(height: 20.0),
-
               const Text("____________________ OR ____________________"),
-
               const SizedBox(height: 20.0),
               const Text("Register with"),
               const SizedBox(height: 9.0),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

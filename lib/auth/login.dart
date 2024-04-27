@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zencash/auth/register.dart';
+import 'package:zencash/landing.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -58,13 +59,13 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                   ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please enter your email';
-                    } else {
-                      return 'Please enter a valid email';
-                    }
-                  },
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return 'Please enter your email';
+                  //   } else {
+                  //     return 'Please enter a valid email';
+                  //   }
+                  // },
                 ),
               ),
               const SizedBox(height: 20.0),
@@ -108,7 +109,12 @@ class _LoginState extends State<Login> {
               GestureDetector(
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
-                    print('Login successful!');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LandingPage(),
+                      ),
+                    );
                   }
                 },
                 child: Container(
