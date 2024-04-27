@@ -24,7 +24,7 @@ List<String> expes = [
         ),
         const SizedBox(height: 10,),
         Container(
-          color: Colors.blue.shade200,
+          color: inco.contains(tran[0]) ? Colors.green.shade200: (expes.contains(tran[0]) ? Colors.red.shade200 : Colors.blue.shade200),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -37,7 +37,7 @@ List<String> expes = [
                 ),
                 Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(expes.contains(tran[0])?inco.contains(tran[0])?'Income':'Expense':'Unknown'),
+                    Text(inco.contains(tran[0]) ? 'Income' : (expes.contains(tran[0]) ? 'Expense' : 'Unknown')),
                     Text(tran[0]),
                   ],
                 )
