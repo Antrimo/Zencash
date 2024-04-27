@@ -214,7 +214,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               const SizedBox(height: 20.0),
-              const Text("____________________ OR ____________________"),
+              const Text("_________________ OR _________________"),
               const SizedBox(height: 20.0),
               const Text("Register with"),
               const SizedBox(height: 9.0),

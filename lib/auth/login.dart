@@ -144,7 +144,7 @@ class _LoginState extends State<Login> {
 
               const SizedBox(height: 20.0),
 
-              const Text("____________________ OR ____________________"),
+              const Text("_________________ OR _________________"),
 
               const SizedBox(height: 40.0),
               const Text("Login with"),
